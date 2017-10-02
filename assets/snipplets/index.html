@@ -1,0 +1,68 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<title>Techlister.com - Folder tree with PHP and jQuery</title>
+	<link rel="stylesheet" href="css/filetree.css" type="text/css" >
+	<script type="text/javascript" src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+	
+<script type="text/javascript" >
+$(document).ready( function() {
+
+	$( '#container' ).html( '<ul class="filetree start"><li class="wait">' + 'Generating Tree...' + '<li></ul>' );
+	
+	getfilelist( $('#container') , 'Sample' );
+	
+	function getfilelist( cont, root ) {
+	
+		$( cont ).addClass( 'wait' );
+			
+		$.post( 'Foldertree.php', { dir: root }, function( data ) {
+	
+			$( cont ).find( '.start' ).html( '' );
+			$( cont ).removeClass( 'wait' ).append( data );
+			if( 'Sample' == root ) 
+				$( cont ).find('UL:hidden').show();
+			else 
+				$( cont ).find('UL:hidden').slideDown({ duration: 500, easing: null });
+			
+		});
+	}
+	
+	$( '#container' ).on('click', 'LI A', function() {
+		var entry = $(this).parent();
+		
+		if( entry.hasClass('folder') ) {
+			if( entry.hasClass('collapsed') ) {
+						
+				entry.find('UL').remove();
+				getfilelist( entry, escape( $(this).attr('rel') ));
+				entry.removeClass('collapsed').addClass('expanded');
+			}
+			else {
+				
+				entry.find('UL').slideUp({ duration: 500, easing: null });
+				entry.removeClass('expanded').addClass('collapsed');
+			}
+		} else {
+			$( '#selected_file' ).text( "File:  " + $(this).attr( 'rel' ));
+		}
+	return false;
+	});
+	
+});
+</script>
+
+</head>
+<body>
+	<div id="logo">
+		<h1>
+			<a href="http://techlister.com/filetree/" title="Folder Tree with PHP and jQuery"><img src="http://techlister.com/ajaxlogin/css/techlister_logo.png" alt="Folder Tree with PHP and jQuery" title="Folder Tree with PHP and jQuery" border="0" style="border: 0px;" /></a>
+		</h1>
+		<div id="pgtitle">
+			Folder Tree with PHP and jQuery
+		</div>
+	</div>
+<div id="container"> </div>
+<div id="selected_file"></div>
+</body>
+</html>

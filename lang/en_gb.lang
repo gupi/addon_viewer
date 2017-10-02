@@ -1,0 +1,9 @@
+# addon:addon_viewer en_gb
+addon_viewer_information = Information
+addon_viewer_title = AddOn Viewer
+addon_viewer_files = Files
+addon_viewer_cancel = Cancel
+addon_viewer_continue = Continue
+addon_viewer_select = Select
+addon_viewer_settings = Settings
+addon_viewer_structure = Structure

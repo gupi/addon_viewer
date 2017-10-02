@@ -1,0 +1,19 @@
+# Alle hier gesetzten Werte können über $addon->getProperty($key) abgefragt werden
+
+package: addon_viewer
+version: '0.3'
+author: 'Gunter Pietzsch'
+compile: 0
+
+page:
+  title: 'AddOn Viewer'
+  perm: addon_viewer[]
+  pjax: true
+  icon: rex-icon fa-hospital-o
+  subpages:
+    info: { title: 'translate:addon_viewer_information' }
+
+requires:
+    packages:
+    
+    redaxo: '>=5.3.0'
