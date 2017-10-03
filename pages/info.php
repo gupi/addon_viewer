@@ -76,13 +76,14 @@ function showFolders($obj) {
   $fragment->setVar ( 'body', $content, false );
   $fragment->setVar ( 'buttons', $buttons, false );
   $content1 = $fragment->parse ( 'core/page/section.php' );
-  
   $java = "  <script type='text/javascript'>
       function getfilelist( cont, root ) {
-  
-    $( cont ).addClass( 'wait' );
+      var daten = 'page=structure';
+      daten += '&rex-api-call=treeview';
+      daten += '&dir='+root;
+      $( cont ).addClass( 'wait' );
       
-    $.post( '#', { dir: root }, function( data ) {
+      $.post( 'index.php', daten, function( data ) {
   
       $( cont ).find( '.start' ).html( '' );
       $( cont ).removeClass( 'wait' ).append( data );
@@ -113,9 +114,9 @@ function showFolders($obj) {
       $( '#selected_file' ).text( \"File:  \" + $(this).attr( 'rel' ));
     }
   return false;
-  });</script>".PHP_EOL;
+  });</script>" . PHP_EOL;
   
-  return $content1.$java;
+  return $content1 . $java;
 }
 
 function showParameters($obj) {
