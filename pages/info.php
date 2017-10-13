@@ -76,7 +76,7 @@ function showFolders($obj) {
     }
   }
 
-  $content .= "<h2>Folders 'n' Files</h2>";
+  $content .= "<h2>Folders 'n' Files of $source</h2>";
   $tv = new treeview ( $source_path );
   $content .= "<div id='ft_container'>" . $tv->create_tree () . "</div>";
   $formElements = [ ];
