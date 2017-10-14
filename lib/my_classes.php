@@ -77,7 +77,6 @@ function execute()
         case "ext_yml":
           $answer["request"] = "md";
           $answer["html"] = highlight_file($file, true);
-          // $answer["html"]=$this->media_highlight_file($file);
           break;
         case "ext_js":
         case "ext_css":
@@ -88,7 +87,6 @@ function execute()
         case "ext_png":
         case "ext_jpg":
         case "ext_gif":
-          // $file = str_replace("..", "", $file);
           $file_info = pathinfo($file);
           $basename = $file_info['basename'];
           $owner_path = rex_path::addon("addon_viewer");
@@ -104,7 +102,6 @@ function execute()
         default:
           $answer["request"] = "md";
           $answer["html"] = markitup::parseOutput('markdown', file_get_contents($file));
-        // $answer["html"]= "<pre>".print_r($type,true)."</pre>";
       }
       echo json_encode($answer);
       

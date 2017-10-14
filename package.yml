@@ -1,7 +1,7 @@
 # Alle hier gesetzten Werte können über $addon->getProperty($key) abgefragt werden
 
 package: addon_viewer
-version: '0.9'
+version: '0.9.2'
 author: 'Gunter Pietzsch'
 compile: 0
 

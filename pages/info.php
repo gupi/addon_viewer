@@ -26,7 +26,7 @@ function showFolders($obj) {
                     <div id="modal-title-info"></div>
 				</div>
 				<div class="modal-body">
-                  <div id="md"></div>
+                  <div id="md" style="max-height:500px; overflow:scroll;" ></div>
 				</div>
 				<div class="modal-footer">
 				    <div class = "right-side">
