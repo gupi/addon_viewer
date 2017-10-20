@@ -6,3 +6,9 @@
     - Für Developer und Neugierige
 
 > Dieses AddOn ist eine Auskopplung aus meinem AddOn Generator und soll all denen helfen, die erst einmal einen Überblick bzw. einen Einblick in den Aufbau von AddOns haben möchten.
+
+![Screenshot](https://raw.githubusercontent.com/gupi/addon_viewer/master/assets/Bildschirmfoto1.png)
+
+![Screenshot](https://raw.githubusercontent.com/gupi/addon_viewer/master/assets/Bildschirmfoto2.png)
+
+![Screenshot](https://raw.githubusercontent.com/gupi/addon_viewer/master/assets/Bildschirmfoto3.png)
