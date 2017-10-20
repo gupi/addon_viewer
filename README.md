@@ -19,5 +19,5 @@
 ![Screenshot](https://raw.githubusercontent.com/gupi/addon_viewer/master/assets/Bildschirmfoto1.png)
 
 
-### So sieht zum Beispiel das package.yml aus
+### Die package.yml - und das steht drin
 ![Screenshot](https://raw.githubusercontent.com/gupi/addon_viewer/master/assets/Bildschirmfoto4.png)
