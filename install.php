@@ -1,6 +1,6 @@
 <?php
 $db = rex_sql::factory();
-$db->setTable('rex_media_manager_type');
+$db->setTable(rex::getTablePrefix() . 'media_manager_type');
 $db->setValue('name','addon_viewer_detail');
 $db->setValue('description','Zur Darstellung von Images im AddOn Viewer');
 $msg = [];
@@ -15,7 +15,7 @@ $id = (int) $db->getLastId();
 
 
 $db = rex_sql::factory();
-$db->setTable('rex_media_manager_type_effect');
+$db->setTable(rex::getTablePrefix() . 'media_manager_type_effect');
 $db->setValue('type_id', $id);
 $db->setValue('priority', '1');
 $db->setValue('effect', 'resize');
@@ -28,7 +28,7 @@ try {
   $msg[] = rex_view::warning('Der Media Manager Effekt wurde nicht angelegt.<br/>Wahrscheinlich existiert er schon.');
 }
 
-$db->setTable('rex_media_manager_type_effect');
+$db->setTable(rex::getTablePrefix() . 'media_manager_type_effect');
 $db->setValue('type_id', $id);
 $db->setValue('priority', '2');
 $db->setValue('effect', 'mediapath');
